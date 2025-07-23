@@ -3,19 +3,140 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #dedede;
+  --foreground: #1E1E1EBF;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+::-webkit-scrollbar {
+  width: 8px; /* Độ rộng của thanh cuộn */
+  height: 8px; /* Độ cao của thanh cuộn (cho cuộn ngang) */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Màu nền của track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9152F850; /* Màu của thumb */
+  border-radius: 4px; /* Bo góc cho thumb */
+  border: 1px solid transparent; /* Khoảng cách bên trong */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #9152F880; /* Màu khi hover */
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #9152F8 0%, #FF3538 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.liquid-glass {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 4px 12px -2px rgba(255, 255, 255, 0.3),
+    inset 2px 2px 3px -1px rgba(255, 255, 255, 0.5);
+}
+
+.pool-wheel-custom path {
+  stroke-opacity: 50%;
+}
+
+.show-coming-soon-to-top {
+  animation: show-coming-soon-to-top 5s ease-in-out;
+}
+
+.show-coming-soon-to-bottom {
+  animation: show-coming-soon-to-bottom 5s ease-in-out;
+}
+
+.show-coming-soon-to-left {
+  animation: show-coming-soon-to-left 5s ease-in-out;
+}
+
+.show-coming-soon-to-right {
+  animation: show-coming-soon-to-right 5s ease-in-out;
+}
+
+@keyframes show-coming-soon-to-left {
+  0% {
+    transform: translateX(100%);
+  } 
+  20% {
+    transform: translateX(0);
+  }
+  80% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes show-coming-soon-to-right {
+  0% {
+    transform: translateX(-100%) rotate(90deg);
+  } 
+  20% {
+    transform: translateX(0) rotate(90deg);
+  }
+  80% {
+    transform: translateX(0) rotate(90deg);
+  }
+  100% {
+    transform: translateX(-100%) rotate(90deg);
+  }
+}
+
+@keyframes show-coming-soon-to-bottom {
+  0% {
+    transform: translateY(-100%) rotate(180deg);
+  } 
+  20% {
+    transform: translateY(0) rotate(180deg);
+  }
+  80% {
+    transform: translateY(0) rotate(180deg);
+  }
+  100% {
+    transform: translateY(-100%) rotate(180deg);
+  }
+}
+
+@keyframes show-coming-soon-to-top {
+  0% {
+    transform: translateY(100%);
+  } 
+  20% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
 }

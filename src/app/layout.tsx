@@ -20,7 +20,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "SONE",
-  icons: ["/logo.png"],
+  icons: ["/images/logo.svg"],
   description:
     "Discover and play exciting games on Sone – an entertainment platform connected to the Somnia network, offering valuable rewards for gamers.",
 };
